@@ -5,7 +5,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import gb.fit  # noqa
 from sklearn.metrics import roc_auc_score
 
-EMB = "/home/akumar/embeddings/ERNIE_Precomputed"
+EMB = "/home/akumar/embeddings/GB_AGENT_v2"
 ART = "/home/akumar/gb-agent/artifacts"
 ind = sys.argv[1] if len(sys.argv) > 1 else "isot"
 oods = sys.argv[2].split(",") if len(sys.argv) > 2 else ["buzzfeed","politifact","liar2_binary"]

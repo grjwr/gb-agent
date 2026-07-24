@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from gb.fit import fit_granular_balls, GBConfig
 
-EMB = "/home/akumar/embeddings/ERNIE_Precomputed"
+EMB = "/home/akumar/embeddings/GB_AGENT_v2"
 OUT = "/home/akumar/gb-agent/artifacts"
 
 p = argparse.ArgumentParser()

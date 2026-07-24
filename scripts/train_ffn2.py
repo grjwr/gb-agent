@@ -5,7 +5,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import gb.fit  # noqa
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
-EMB = "/home/akumar/embeddings/ERNIE_Precomputed"
+EMB = "/home/akumar/embeddings/GB_AGENT_v2"
 ART = "/home/akumar/gb-agent/artifacts"
 
 p = argparse.ArgumentParser()
