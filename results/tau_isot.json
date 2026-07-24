@@ -1,0 +1,26 @@
+{
+  "in_dist": "isot",
+  "tau": 29.658072199686497,
+  "results": [
+    {
+      "ood": "buzzfeed",
+      "auc": 0.5521,
+      "ood_flagged": 0.0769
+    },
+    {
+      "ood": "politifact",
+      "auc": 0.6094,
+      "ood_flagged": 0.1023
+    },
+    {
+      "ood": "liar2_binary",
+      "auc": 0.9744,
+      "ood_flagged": 0.892
+    },
+    {
+      "ood": "gossipcop",
+      "auc": 0.6549,
+      "ood_flagged": 0.1318
+    }
+  ]
+}
