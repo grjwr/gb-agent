@@ -42,9 +42,19 @@ Routing runs against **all four benchmark datasets** (ISOT, WELFake, GossipCop, 
 
 ## Key findings
 
-- **GB-FFN prototype routing detects out-of-genre novelty well.** Distance-to-prototype separates claim-style text (LIAR2) from article-style training data with **AUC 0.97–0.99** across all four datasets.
-- **Veracity structure is domain-specific.** Naively merging all four datasets into one prototype space collapses purity from ~0.80 to ~0.59 (near base rate), so the system keeps four *separate* clean ball-sets and routes across them rather than blending. (Documented as a negative result in `scripts/fit_gb_merged.py`.)
-- **Cascading design keeps the fast path safe.** Because prototype purity reflects the training neighborhood — not the truth of a new claim — GB-FFN escalates ambiguous cases to evidence-grounded LLM reasoning rather than guessing.
+*The following are results from this agent system's own experiments (reproducible via the scripts in this repo), complementary to the classification benchmarks reported in the paper.*
+
+- **Strong out-of-distribution routing.** Distance-to-prototype cleanly separates unfamiliar claim-style text (LIAR2) from the article-style training data, with **AUC 0.97–0.99** across all four datasets — a reliable signal for deciding when to escalate.
+- **Effective cascading hybrid.** GB-FFN resolves claims that match known prototypes locally, while ambiguous or novel claims escalate to live web evidence and LLM reasoning — combining the speed of a lightweight model with the accuracy of grounded verification.
+- **Deployed and working end-to-end.** A public, interactive web app runs the full pipeline (ERNIE → GB-FFN → web → LLM) on free infrastructure, with the ERNIE encoder and four GB ball-sets loaded at runtime.
+
+---
+
+## Limitations
+
+- **A single merged prototype space does not generalize across domains.** When all four datasets are pooled into one Granular-Ball space, cluster purity collapses from ~0.80 (per-dataset) to ~0.59 — near the base rate — indicating that veracity structure is **domain-specific** rather than shared across news genres. The system works around this by maintaining four separate, individually-clean ball-sets and routing across them, rather than relying on one generalized space. (Reproducible via `scripts/fit_gb_merged.py`.)
+- **Prototype purity is not a truth signal.** A claim landing near a high-purity ball reflects similarity to a clean *training* neighborhood, not the factual truth of the claim. This is precisely why the fast path is conservative and escalates uncertain cases to evidence-grounded reasoning rather than trusting the prototype label alone.
+- **Short claims often escalate.** User-typed claims are stylistically unlike the article-length training text, so many are routed to the LLM path. This is the safe direction, but it means GB-FFN acts more as a router than a standalone classifier for short-form input.
 
 ---
 
