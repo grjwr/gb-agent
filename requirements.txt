@@ -1,0 +1,9 @@
+streamlit==1.60.0
+torch
+transformers
+scikit-learn
+scipy
+numpy
+langgraph
+ddgs
+google-generativeai

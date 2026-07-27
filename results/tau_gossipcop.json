@@ -1,0 +1,11 @@
+{
+  "in_dist": "gossipcop",
+  "tau": 31.274617784656158,
+  "results": [
+    {
+      "ood": "liar2",
+      "auc": 0.9868,
+      "ood_flagged": 0.9486
+    }
+  ]
+}

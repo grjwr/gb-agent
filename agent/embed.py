@@ -6,7 +6,8 @@ GBAssigner applies mu/sigma downstream, so this must return raw CLS.
 import torch
 from transformers import AutoTokenizer, AutoModel
 
-MODEL_PATH = "/home/akumar/local_models/ernie-base-en"
+import os
+MODEL_PATH = os.environ.get("ERNIE_PATH", "grjwr/ernie-base-en-gb")
 MAX_LEN = 128  # matches gen_embeddings_v2.py
 
 

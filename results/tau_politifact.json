@@ -1,0 +1,11 @@
+{
+  "in_dist": "politifact",
+  "tau": 36.256214759622296,
+  "results": [
+    {
+      "ood": "liar2",
+      "auc": 0.9707,
+      "ood_flagged": 0.8506
+    }
+  ]
+}

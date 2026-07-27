@@ -1,30 +1,11 @@
 {
   "in_dist": "welfake",
-  "tau_p95": 27.89049033630091,
+  "tau": 30.294320690820093,
   "results": [
     {
-      "ood": "buzzfeed",
-      "auc": 0.537,
-      "tau": 27.89,
-      "ood_flagged": 0.0549
-    },
-    {
-      "ood": "politifact",
-      "auc": 0.5474,
-      "tau": 27.89,
-      "ood_flagged": 0.0701
-    },
-    {
-      "ood": "gossipcop",
-      "auc": 0.6251,
-      "tau": 27.89,
-      "ood_flagged": 0.1043
-    },
-    {
-      "ood": "liar2_binary",
-      "auc": 0.972,
-      "tau": 27.89,
-      "ood_flagged": 0.8791
+      "ood": "liar2",
+      "auc": 0.9832,
+      "ood_flagged": 0.9318
     }
   ]
 }
