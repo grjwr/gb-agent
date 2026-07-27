@@ -5,7 +5,7 @@ from gb.assign_multi import MultiGBAssigner
 from agent.websearch import web_search
 from agent.arbiter_gemini import GeminiArbiter
 
-ART = "/home/akumar/gb-agent/artifacts"
+ART = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "artifacts")
 PATHS = {"isot": f"{ART}/gb_isot.pkl", "welfake": f"{ART}/gb_welfake.pkl",
          "gossipcop": f"{ART}/gb_gossipcop.pkl", "politifact": f"{ART}/gb_politifact.pkl"}
 TAUS = {"isot": 31.80, "welfake": 30.29, "gossipcop": 31.27, "politifact": 36.26}
