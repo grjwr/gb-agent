@@ -13,7 +13,7 @@ TAUS = {"isot": 31.80, "welfake": 30.29, "gossipcop": 31.27, "politifact": 36.26
 _emb = _asg = _gem = None
 def _lazy():
     global _emb, _asg, _gem
-    if _emb is None:
+    if _asg is None:
         _emb = ErnieEmbedder()
         _asg = MultiGBAssigner(PATHS, TAUS, purity_floor=0.80)
         _gem = GeminiArbiter()
