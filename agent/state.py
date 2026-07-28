@@ -8,5 +8,6 @@ class AgentState(TypedDict, total=False):
     embedding: list                     # ERNIE [CLS] (768,)
     gb: dict                            # GBAssigner.assign() output
     route: str                          # "fast_path" | "escalate"
+    gb_verdict: dict                    # GBFFN fast-path verdict
     evidence: Annotated[List[dict], operator.add]  # web + rag, fan-in
     verdict: dict                       # final {label, confidence, rationale, sources}
